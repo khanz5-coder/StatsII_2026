@@ -23,27 +23,40 @@
 # GDP per capita (current US$): NY.GDP.PCAP.CD
 # "tax revenue (% of GDP)": GC.TAX.TOTL.GD.ZS
 
+
+
+#setwd('/Users/zahrita/Documents/GitHub/StatsII_2026/tutorials/Week1')
+
 #### Importing the data
 # Your csv file should now be in the desktop folder. Before opening it, we're going to
 # load in our libraries.
 
 library(tidyverse)
 library(stargazer)
-
+library(readr)
 ## loading the data
-data <- 
-
+data <- read_csv("tutorial01_data.csv",
+                 col_types = cols(
+                   `Ease of doing business rank (1=most business-friendly regulations)` = col_double(),
+                   `Tax revenue (% of GDP)` = col_double(),
+                   `GDP per capita (current US$)` = col_double()))
+                 
+str(data)
 #### Wrangling the data
 # We should now have a dataset where our variables are at least of the correct type.
 # However, we need to do a bit of tidying to get the data into a more user-friendly
 # format. 
   
-# 1. First, let's have a look at our data object. Use the functions we learned from last
-#    term. 
+# 1. First, let's have a look at our data object. Use the functions we learned from last term. 
+head(data)
 
 # 2. Let's drop the rows and columns we don't need.
 # We only have one year, so the two cols related to year can be dropped; also, we only
 # really need one col for country name, so let's drop country code too.
+
+data <- data %>%
+  select(-(starts_with("Time")), -("Country Code"))
+
   
 # 3. Let's also get rid of the variable code in square brackets
 
@@ -55,12 +68,23 @@ names(data) <- #hint: try using the function sub() with the regexp " \\[.*"
 # 1. Let's perform some preliminary descriptive analysis using our visualisation skills.
 #    Try using ggplot to create a plot of scatter showing GDP p/c vs Tax revenue. Add a
 #    simple linear regression line.
-  
+pdf("test.pdf")
+data %>%
+  ggplot(aes(data = data, `Tax revenue (% of GDP)`,`GDP per capita (current US$)`)) +
+  geom_point() +
+  geom_smooth(method = 'lm')
+dev.off()
 # 2. Now let's try the same using GDP p/c vs Ease of Doing Business.
-
+data %>%
+  ggplot(aes(data = data, `GDP per capita (current US$)`, `Ease of doing business rank (1=most business-friendly regulations)`)) +
+  geom_point() +
+  geom_smooth(method = 'lm')
 # 3. And, for the sake of argument, let's see what the relationship is between Tax and
 #    Ease of Doing Business.
-
+data %>%
+  ggplot(aes(data = data, `Tax revenue (% of GDP`, `Ease of doing business rank (1=most business-friendly regulations)`)) +
+  geom_point() +
+  geom_smooth(method = 'lm')
 # 4. Let's think for a minute before we perform the multivariate regression: what kind
 #    of interaction are we seeing with these three plots?
 

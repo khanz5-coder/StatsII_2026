@@ -37,19 +37,14 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #####################
 #creating data
 set.seed(123)
+
 data <- (rcauchy(1000, location = 0, scale = 1))
 
-KSpval <- function(data) {
-  n <- length(data)
-  ECDF <- ecdf(data) #creating empirical distribution of observed data
-  empiricalCDF <- ECDF(data)
-  d_value <- max(abs(empiricalCDF - pnorm(data))) #test statistic
-  p_val <- sqrt(2*)
-  
-  return(p_val)
-}
+ECDF <- ecdf(data) #creating empirical distribution of observed data
+empiricalCDF <- ECDF(data)
 
 
+         
 KSpval <- function(data) {
   n <- length(data) #finding the length of the dataset
   ECDF <- ecdf(data) #creating empirical distribution of observed data
