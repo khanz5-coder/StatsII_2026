@@ -37,24 +37,23 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #####################
 #creating data
 set.seed(123)
-
 data <- (rcauchy(1000, location = 0, scale = 1))
-
-ECDF <- ecdf(data) #creating empirical distribution of observed data
-empiricalCDF <- ECDF(data)
-
-
-         
 KSpval <- function(data) {
-  n <- length(data) #finding the length of the dataset
+  data <- data[[1]] #explicitly assuming one column to prevent ecdf error 
+  k <- length(data) #setting the length of K
   ECDF <- ecdf(data) #creating empirical distribution of observed data
-  empiricalCDF <- ECDF(data)
+  empiricalCDF <- ECDF(data) #creating empirical distribution
   d_value <- max(abs(empiricalCDF - pnorm(data))) #test statistic
-  p_val <- d_value * (sqrt(n)) #finding p_value
-
-return(p_val)
+  i <- 1:k #taking a vectorized approach instead of a loop for calculating the terms
+  terms <- exp(-((2*i - 1)^2) * pi^2)/(8*(d_value^2)) #calculating the terms for all 100 k's
+  d_obs <- sqrt(2 * pi)/d_value * sum(terms) #calculating the observation
+return(d_obs)
 }
-  
+
+# [1] 0.0006529358
+
+
+
 #####################
 # Problem 2
 #####################
