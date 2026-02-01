@@ -29,11 +29,42 @@ lapply(libs, library, character.only = TRUE)
 
 ## loading the data
 library(readxl)
-data <- read_excel("Documents/GitHub/StatsII_2026/tutorials ZK/Week 2/cbg_turnover_v23upload.xlsx", sheet = "data v2023")
+data <- read_excel("Documents/GitHub/StatsII_2026/tutorials/ZK/Week2/cbg_turnover_v23upload.xlsx", sheet = "data v2023")
 View(data)
 
+
 data <- data %>%
-  select
+  select(
+    codewdi,
+    country,
+    year,
+    `time to regular turnover`,
+    `regular turnover dummy`,
+    `irregular turnover dummy`,
+    `legal duration`
+  ) %>%
+  mutate(
+    codewdi = as.factor(codewdi),
+    country = as.factor(country),
+    year = as.integer(year),
+    time_to_regular_turnover = as.integer(`time to regular turnover`),
+    regular_turnover = as.integer(`regular turnover dummy`),
+    irregular_turnover = as.integer(`irregular turnover dummy`),
+    legal_duration = as.integer(`legal duration`)
+  ) %>%
+  drop_na()
+
+data <- data %>%
+  select(
+    codewdi,
+    country,
+    year,
+    time_to_regular_turnover,
+    regular_turnover,
+    irregular_turnover,
+    legal_duration
+  )
+
 
 # 2. Gather necessary variables
 #    codewdi: Country code or name
