@@ -39,18 +39,17 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 set.seed(123)
 data <- (rcauchy(1000, location = 0, scale = 1))
 KSpval <- function(data) {
-  data <- data[[1]] #explicitly assuming one column to prevent ecdf error 
-  k <- length(data) #setting the length of K
-  ECDF <- ecdf(data) #creating empirical distribution of observed data
-  empiricalCDF <- ECDF(data) #creating empirical distribution
-  d_value <- max(abs(empiricalCDF - pnorm(data))) #test statistic
+  k <- length(data) 
+  ECDF <- ecdf(data)
+  empiricalCDF <- ECDF(data)
+  d_value <- max(abs(empiricalCDF - pnorm(data))) 
   i <- 1:k #taking a vectorized approach instead of a loop for calculating the terms
-  terms <- exp(-((2*i - 1)^2) * pi^2)/(8*(d_value^2)) #calculating the terms for all 100 k's
-  d_obs <- sqrt(2 * pi)/d_value * sum(terms) #calculating the observation
+  terms<- exp(-(((2*i - 1)^2) * pi^2)/(8*(d_value^2))) #calculating the terms for all 100 k's
+  d_obs <- sqrt(2 * pi)/d_value * sum(terms) #calculating the observation 
 return(d_obs)
 }
-
-# [1] 0.0006529358
+KSpval(data)
+# [1] 5.652523e-29
 
 
 
@@ -61,3 +60,21 @@ return(d_obs)
 set.seed (123)
 data <- data.frame(x = runif(200, 1, 10))
 data$y <- 0 + 2.75*data$x + rnorm(200, 0, 1.5)
+#Plotting the data:
+plot(data$x, data$y, ylab = "Y", xlab = "X")
+linear.lik <- function(theta, y, X) { #creating a log of likelihood function
+  n <-  nrow(X) 
+  k <- ncol(X)
+  beta <- theta[1:k] 
+  sigma2 <- theta[k+1]^2
+  e <- y - X%*%beta
+  logl <- -.5*n*log(2*pi)-.5*n*log(sigma2) - ( (t(e) %*%e)/ (2*sigma2) )
+return(-logl) 
+}
+
+MLEt <- optim(fn=linear.lik, y=data$y, X = cbind(1, data$x), par=c(1,1,1), hessian=T, method ="BFGS")
+MLEt$par #pulling out values of interest 
+#[1]  0.1429829  2.7263116 -1.4423360
+linear <- summary(lm(data$y ~ data$x)) #running an OLS model to compare
+
+

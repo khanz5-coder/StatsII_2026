@@ -105,6 +105,22 @@ $$p(D \leq d)= \frac{\sqrt {2\pi}}{d} \sum _{k=1}^{\infty }e^{-(2k-1)^{2}\pi ^{2
 \section*{Question 2}
 \noindent Estimate an OLS regression in \texttt{R} that uses the Newton-Raphson algorithm (specifically \texttt{BFGS}, which is a quasi-Newton method), and show that you get the equivalent results to using \texttt{lm}. Use the code below to create your data.
 \vspace{.5cm}
-\lstinputlisting[language=R, firstline=51,lastline=53]{PS01zk.R} 
+\begin{description}
+		\item\noindent Prior to running the codes I ensured to plot my graph to visualize the data. 
+\end{description}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\textwidth]{plt.png}
+		\label{fig:q1model}
+	\end{figure}
+\begin{description}
+	\item\noindent After plotting the graph, and inspecting the shape and structure of our data, we've determined to use a log-likelihood function for a normal distribution. 
+\end{description}
+\vspace{2cm}
+\lstinputlisting[language=R, firstline=60,lastline=79]{PS01zk.R} 
+
+\begin{description}
+	\item\noindent When running the "lm" function in R with the same datapoints I recieved an intercept of 0.13919 and a beta of 2.72670. Both of these values are incredibly close and similar to the result of using the optim function. This affirms the accuracy of the MLE model.
+\end{description}
 
 \end{document}
