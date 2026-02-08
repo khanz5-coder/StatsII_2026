@@ -62,6 +62,7 @@ data <- data.frame(x = runif(200, 1, 10))
 data$y <- 0 + 2.75*data$x + rnorm(200, 0, 1.5)
 #Plotting the data:
 plot(data$x, data$y, ylab = "Y", xlab = "X")
+#creating the linear likelihood function
 linear.lik <- function(theta, y, X) { #creating a log of likelihood function
   n <-  nrow(X) 
   k <- ncol(X)
@@ -71,10 +72,11 @@ linear.lik <- function(theta, y, X) { #creating a log of likelihood function
   logl <- -.5*n*log(2*pi)-.5*n*log(sigma2) - ( (t(e) %*%e)/ (2*sigma2) )
 return(-logl) 
 }
-
+#running with optim.
 MLEt <- optim(fn=linear.lik, y=data$y, X = cbind(1, data$x), par=c(1,1,1), hessian=T, method ="BFGS")
-MLEt$par #pulling out values of interest 
+MLEt$par  
 #[1]  0.1429829  2.7263116 -1.4423360
-linear <- summary(lm(data$y ~ data$x)) #running an OLS model to compare
+linear <- summary(lm(data$y ~ data$x)) 
+#running an OLS model to compare
 
 
