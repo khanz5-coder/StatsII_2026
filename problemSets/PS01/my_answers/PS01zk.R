@@ -38,11 +38,12 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 #creating data
 set.seed(123)
 data <- (rcauchy(1000, location = 0, scale = 1))
+#creating the function
 KSpval <- function(data) {
-  k <- length(data) 
-  ECDF <- ecdf(data)
+  k <- length(data) #initalizing for iteration.
+  ECDF <- ecdf(data) 
   empiricalCDF <- ECDF(data)
-  d_value <- max(abs(empiricalCDF - pnorm(data))) 
+  d_value <- max(abs(empiricalCDF - pnorm(data))) #test statistic
   i <- 1:k #taking a vectorized approach instead of a loop for calculating the terms
   terms<- exp(-(((2*i - 1)^2) * pi^2)/(8*(d_value^2))) #calculating the terms for all 100 k's
   d_obs <- sqrt(2 * pi)/d_value * sum(terms) #calculating the observation 
@@ -77,6 +78,6 @@ MLEt <- optim(fn=linear.lik, y=data$y, X = cbind(1, data$x), par=c(1,1,1), hessi
 MLEt$par  
 #[1]  0.1429829  2.7263116 -1.4423360
 linear <- summary(lm(data$y ~ data$x)) 
-#running an OLS model to compare
-
+# (Intercept)  0.13919
+# data$x       2.72670
 
