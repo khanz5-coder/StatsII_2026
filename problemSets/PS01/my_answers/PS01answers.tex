@@ -105,26 +105,11 @@ $$p(D \leq d)= \frac{\sqrt {2\pi}}{d} \sum _{k=1}^{\infty }e^{-(2k-1)^{2}\pi ^{2
 
 \section*{Question 2}
 \noindent Estimate an OLS regression in \texttt{R} that uses the Newton-Raphson algorithm (specifically \texttt{BFGS}, which is a quasi-Newton method), and show that you get the equivalent results to using \texttt{lm}. Use the code below to create your data.
-\vspace{.5cm}
-\begin{description}
-		\item\noindent Prior to running the codes I ensured to plot my graph to visualize the data. 
-\end{description}
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=0.7\textwidth]{plt.png}
-		\label{fig:q1model}
-		\vspace{0.5cm}
-		\lstinputlisting[language=R, firstline=65,lastline=65]{PS01zk.R} 
-		
-	\end{figure}
-\begin{description}
-	\item\noindent After plotting the graph, and inspecting the shape and structure of our data, we've determined to use a linear likelihood function. 
-\end{description}
 \vspace{2cm}
 \lstinputlisting[language=R, firstline=67,lastline=82]{PS01zk.R} 
 
 \begin{description}
-	\item\noindent In order to ensure the results from the linear likelihood function are correct, are we correctly estimating an OLS regression? We can compare it to R's lm function. After running both, we see that the intercept values differ slightly due to rounding, but are largely equivalent. The beta values are largely equivalent at 2.726 and slightly differ in the preceding values. 
+	\item\noindent To ensure the results from the linear likelihood function are correct and that we are correctly estimating an OLS regression, we can compare them to R's lm function. After running both, we see that the intercept values differ slightly, but when rounded to the second decimal point, are equivalent. The beta values are 2.72. The intercept values are 0.14. There will be a slight difference, since the OLS estimator of variance is unbiased, whereas the ML estimator is biased. If we were to have a larger sample, however, the differences would be insignificant.
 \end{description}
 
 \end{document}
