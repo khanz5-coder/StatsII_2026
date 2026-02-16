@@ -1,0 +1,144 @@
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Sun, Feb 15, 2026 - 11:57:08
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{4}{c}{\textbf{racial\_resentment}} \\ 
+\\[-1.8ex] & \textbf{Model 1} & \textbf{Model 2} & \textbf{Model 3} & \textbf{Model 4}\\ 
+\hline \\[-1.8ex] 
+ union\_gained & $-$0.055$^{**}$ & $-$0.055$^{**}$ & $-$0.051$^{**}$ & $-$0.049$^{**}$ \\ 
+  & (0.018) & (0.018) & (0.019) & (0.018) \\ 
+  union\_lost & 0.0002 & $-$0.00001 & $-$0.003 & 0.009 \\ 
+  & (0.032) & (0.032) & (0.033) & (0.033) \\ 
+  racial\_resentment\_lag & 0.899$^{***}$ & 0.899$^{***}$ & 0.884$^{***}$ & 0.797$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.005) & (0.007) \\ 
+  dem\_id\_2010 &  &  &  & $-$0.124$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  faminc\_10 &  &  & 0.0004 & $-$0.0005 \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(gender\_10)1 &  &  & $-$0.007 & 0.002 \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  age\_10 &  &  & 0.0003$^{*}$ & 0.0002 \\ 
+  &  &  & (0.0001) & (0.0001) \\ 
+  educ\_10 &  &  & $-$0.010$^{***}$ & $-$0.010$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(year)2014 &  & 0.004 & 0.005 & 0.003 \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  Constant & 0.056$^{***}$ & 0.054$^{***}$ & 0.084$^{***}$ & 0.215$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.012) & (0.014) \\ 
+ N & 10908 & 10908 & 9726 & 9617 \\ 
+R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Adj. R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Residual Std. Error & 0.165 (df = 10904) & 0.165 (df = 10903) & 0.165 (df = 9717) & 0.161 (df = 9607) \\ 
+F Statistic & 10863.440$^{***}$ (df = 3; 10904) & 8148.794$^{***}$ (df = 4; 10903) & 3629.656$^{***}$ (df = 8; 9717) & 3454.658$^{***}$ (df = 9; 9607) \\ 
+\hline \\[-1.8ex] 
+\multicolumn{5}{l}{$^{***}$p $<$ .001; $^{**}$p $<$ .01; $^{*}$p $<$ .05} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Sun, Feb 15, 2026 - 11:57:25
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{4}{c}{\textbf{racial\_resentment}} \\ 
+\\[-1.8ex] & \textbf{Model 1} & \textbf{Model 2} & \textbf{Model 3} & \textbf{Model 4}\\ 
+\hline \\[-1.8ex] 
+ union\_gained & $-$0.055$^{**}$ & $-$0.055$^{**}$ & $-$0.051$^{**}$ & $-$0.049$^{**}$ \\ 
+  & (0.018) & (0.018) & (0.019) & (0.018) \\ 
+  union\_lost & 0.0002 & $-$0.00001 & $-$0.003 & 0.009 \\ 
+  & (0.032) & (0.032) & (0.033) & (0.033) \\ 
+  racial\_resentment\_lag & 0.899$^{***}$ & 0.899$^{***}$ & 0.884$^{***}$ & 0.797$^{***}$ \\ 
+  & (0.005) & (0.005) & (0.005) & (0.007) \\ 
+  dem\_id\_2010 &  &  &  & $-$0.124$^{***}$ \\ 
+  &  &  &  & (0.005) \\ 
+  faminc\_10 &  &  & 0.0004 & $-$0.0005 \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(gender\_10)1 &  &  & $-$0.007 & 0.002 \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  age\_10 &  &  & 0.0003$^{*}$ & 0.0002 \\ 
+  &  &  & (0.0001) & (0.0001) \\ 
+  educ\_10 &  &  & $-$0.010$^{***}$ & $-$0.010$^{***}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(year)2014 &  & 0.004 & 0.005 & 0.003 \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  Constant & 0.056$^{***}$ & 0.054$^{***}$ & 0.084$^{***}$ & 0.215$^{***}$ \\ 
+  & (0.004) & (0.004) & (0.012) & (0.014) \\ 
+ N & 10908 & 10908 & 9726 & 9617 \\ 
+R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Adj. R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Residual Std. Error & 0.165 (df = 10904) & 0.165 (df = 10903) & 0.165 (df = 9717) & 0.161 (df = 9607) \\ 
+F Statistic & 10863.440$^{***}$ (df = 3; 10904) & 8148.794$^{***}$ (df = 4; 10903) & 3629.656$^{***}$ (df = 8; 9717) & 3454.658$^{***}$ (df = 9; 9607) \\ 
+\hline \\[-1.8ex] 
+\multicolumn{5}{l}{$^{***}$p $<$ .001; $^{**}$p $<$ .01; $^{*}$p $<$ .05} \\ 
+\end{tabular} 
+\end{table} 
+
+% Table created by stargazer v.5.2.3 by Marek Hlavac, Social Policy Institute. E-mail: marek.hlavac at gmail.com
+% Date and time: Sun, Feb 15, 2026 - 11:57:56
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lcccc} 
+\\[-1.8ex]\hline \\[-1.8ex] 
+\\[-1.8ex] & \multicolumn{4}{c}{\textbf{racial\_resentment}} \\ 
+\\[-1.8ex] & \textbf{Model 1} & \textbf{Model 2} & \textbf{Model 3} & \textbf{Model 4}\\ 
+\hline \\[-1.8ex] 
+ union\_gained & $-$0.055$^{**}$ & $-$0.055$^{**}$ & $-$0.051$^{**}$ & $-$0.049$^{**}$ \\ 
+  & (0.018) & (0.018) & (0.019) & (0.018) \\ 
+  union\_lost & 0.0002 & $-$0.00001 & $-$0.003 & 0.009 \\ 
+  & (0.032) & (0.032) & (0.033) & (0.033) \\ 
+  racial\_resentment\_lag & 0.899$^{*}$ & 0.899$^{*}$ & 0.884$^{*}$ & 0.797$^{*}$ \\ 
+  & (0.005) & (0.005) & (0.005) & (0.007) \\ 
+  dem\_id\_2010 &  &  &  & $-$0.124$^{*}$ \\ 
+  &  &  &  & (0.005) \\ 
+  faminc\_10 &  &  & 0.0004 & $-$0.0005 \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(gender\_10)1 &  &  & $-$0.007 & 0.002 \\ 
+  &  &  & (0.003) & (0.003) \\ 
+  age\_10 &  &  & 0.0003$^{***}$ & 0.0002 \\ 
+  &  &  & (0.0001) & (0.0001) \\ 
+  educ\_10 &  &  & $-$0.010$^{*}$ & $-$0.010$^{*}$ \\ 
+  &  &  & (0.001) & (0.001) \\ 
+  factor(year)2014 &  & 0.004 & 0.005 & 0.003 \\ 
+  &  & (0.003) & (0.003) & (0.003) \\ 
+  Constant & 0.056$^{*}$ & 0.054$^{*}$ & 0.084$^{*}$ & 0.215$^{*}$ \\ 
+  & (0.004) & (0.004) & (0.012) & (0.014) \\ 
+ N & 10908 & 10908 & 9726 & 9617 \\ 
+R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Adj. R-squared & 0.749 & 0.749 & 0.749 & 0.764 \\ 
+Residual Std. Error & 0.165 (df = 10904) & 0.165 (df = 10903) & 0.165 (df = 9717) & 0.161 (df = 9607) \\ 
+F Statistic & 10863.440$^{*}$ (df = 3; 10904) & 8148.794$^{*}$ (df = 4; 10903) & 3629.656$^{*}$ (df = 8; 9717) & 3454.658$^{*}$ (df = 9; 9607) \\ 
+\hline \\[-1.8ex] 
+\multicolumn{5}{l}{$^{***}$p $<$ .001; $^{**}$p $<$ .01; $^{*}$p $<$ .05} \\ 
+\end{tabular} 
+\end{table} 
+
+Call:
+lm(formula = racial_resentment ~ union_gained + union_lost + 
+    racial_resentment_lag, data = data_long[data_long$race_10 == 
+    1, ])
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.84227 -0.09227  0.03273  0.04539  0.81910 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)    
+(Intercept)            0.0559009  0.0036775  15.201  < 2e-16 ***
+union_gained          -0.0548070  0.0180111  -3.043  0.00235 ** 
+union_lost             0.0001621  0.0324766   0.005  0.99602    
+racial_resentment_lag  0.8987113  0.0049806 180.442  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.1654 on 10904 degrees of freedom
+  (13017 observations deleted due to missingness)
+Multiple R-squared:  0.7493,	Adjusted R-squared:  0.7492 
+F-statistic: 1.086e+04 on 3 and 10904 DF,  p-value: < 2.2e-16
+
