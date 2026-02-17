@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  15 FEB 2026 12:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  17 FEB 2026 16:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,20 +913,23 @@ File: lstlang2.sty 2024/09/23 1.10c listings language file
 File: lstlang3.sty 2024/09/23 1.10c listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 155.
+nput line 162.
 
-(./PS02 copy.R
+(./PS02 Copy.R
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 4
-3.
+6.
  (/usr/local/texlive/2025/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 43.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 46.
 )
-(./PS02 copy.R)
 
-[3] (./PS02 copy.aux)
+[3] (./PS02 Copy.R) (./PS02 Copy.R)
+
+[4] (./PS02 Copy.R)
+
+[5] (./PS02 copy.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -935,13 +938,13 @@ Package rerunfilecheck Info: File `"PS02 copy".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 27326 strings out of 473190
- 475813 string characters out of 5715801
- 1181366 words of memory out of 5000000
- 50061 multiletter control sequences out of 15000+600000
+ 27361 strings out of 473190
+ 476292 string characters out of 5715801
+ 1156635 words of memory out of 5000000
+ 50063 multiletter control sequences out of 15000+600000
  569930 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,11n,91p,3243b,2214s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,91p,3243b,2280s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -955,10 +958,10 @@ exlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/te
 xlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/tex
 live/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texli
 ve/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on "PS02 copy.pdf" (3 pages, 142979 bytes).
+Output written on "PS02 copy.pdf" (5 pages, 153444 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
- 36 named destinations out of 1000 (max. 500000)
+ 171 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
+ 64 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

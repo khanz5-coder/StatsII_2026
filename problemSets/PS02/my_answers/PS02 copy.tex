@@ -147,12 +147,23 @@
 \end{table}  
 
 \begin{description}
-	\item \noindent After running the global f-test we recive a pvalue of 2.2e-16 *** which at a threshold of alpha = 0.05, is an extremely signficant result. This means that at least one of our predictors can explain the variation in the model. Or that the slope of one of the predictors is different from zero.
+	\item \noindent After running the liklihood ratio test, we recive a p-value of 2.2e-16, which at a threshold of alpha = 0.05, is an extremely signficant result. This means that at least one of our predictors is a significant predictor in the logistic regression model. 
 \end{description}
+\begin{description}
+	\item[Intercept] When 20 of the 192 countries are particiapting and there are no sanctions the expected odds that an indivdual will support the policy is exp(-0.273) = 0.76, which is our baseline odds ratio. 
+	\item[Intercept] When 20 of the 192 countries are particiapting and there are no sanctions, the expected odds that an individual will support the policy are exp(-0.273) = 0.76, which is our baseline odds ratio. 
+\item[Countries 80 of 192] On average, having 80 out of 192 countries participating increases the log odds of supporting a policy by 0.336, holding all else constant.
+\item[Countries 160 of 192] On average, having 160 out of 192 countries participating increases the log odds of supporting a policy by 0.648, holding all else constant.
+\item[Sanctions 5\%] On average, having five percent sanctions increases the log odds of supporting a policy by 0.192, holding all else constant.
+\item[Sanctions 15\%] On average, having fifteen percent sanctions decreases the log odds of supporting a policy by 0.133, holding all else constant.
+\item[Sanctions 20\%] On average, having twenty percent sanctions decreases the log odds of supporting a policy by 0.304, holding all else constant.
+
+\end{description}
+	\lstinputlisting[language=R, firstline=46,lastline=64]{PS02 Copy.R}
 		\vspace{2cm}
 \end{enumerate}
+
 	
-	\lstinputlisting[language=R, firstline=40,lastline=57]{PS02 copy.R}
 
 	
 	\item
@@ -160,22 +171,41 @@
 	\begin{enumerate}
 		\item
 		For the policy in which nearly all countries participate [160 of 192], how does increasing sanctions from 5\% to 15\% change the odds that an individual will support the policy? (Interpretation of a coefficient)
-\item On average, increasing sanctions from 5\% to 15\% decreases the log odds of supporting the policy by 0.18, holding all else constant. If we calucalute the odds we should take 
-		\item
-		For the policy in which very few countries participate [20 of 192], how does increasing sanctions from 5\% to 15\% change the odds that an individual will support the policy? (Interpretation of a coefficient)
-	
+		
+	\begin{description}
+		\item \noindent Given that this is an additive model, country participation does not impact the change in odds when sanctions increase from 5 to 15\%. Given this, we will mathematically compare the variable for 5\% sanctions to 15\% sanctions.  
+	\end{description}
+	\lstinputlisting[language=R, firstline=70,lastline=76]{PS02 Copy.R}
+	\begin{description}
+	\item \noindent When holding all other variables constant, an increase in sanctions from 5\% to 15\% decreases the log odds that an individual will support the policy by 0.325. In addition to the log odds, we can also calculate the odds ratio and express it as a percentage. We would then say that the odds of an individual supporting the policy would decrease by 27.27\%
+\end{description}
 		\item
 		What is the estimated probability that an individual will support a policy if there are 80 of 192 countries participating with no sanctions? 
+		
+		
+\begin{description}
+	\item \noindent As stated above, in an additive model, the number of participating countries does not affect the change in policy support when moving from 5 to 15\% sanctions. Therefore, as stated above, when sanctions are increased from 5\% to 15\%, and all other variables are held constant, the log odds that an individual will support the policy decrease by 0.325, or, expressed as by the odds ratio, a decrease of 27.75\%.
+\end{description}
 
+What is the estimated probability that an individual will support a policy if there are 80 of 192 countries participating with no sanctions? 
+\begin{description}
+	\item \noindent  The estimated probability that an indivdual would support a policy if 80 out of 192 countries participate with no sanctions is 0.5159 or 51.59\%  
+\end{description}
+
+	\lstinputlisting[language=R, firstline=78,lastline=85]{PS02 Copy.R}
 	\end{enumerate}
 	\item
 	Would the answers to 2a and 2b potentially change if we included an interaction term in this model? Why? 
 	\begin{itemize}
-			\lstinputlisting[language=R, firstline=60,lastline=63]{PS02 copy.R}
 		\item Perform a test to see if including an interaction is appropriate.
 	\end{itemize}
 \begin{description}
-	\item \noindent After running a test with the additive model and the interactive model, we find a p-value of 0.39. At a threshold of alpha = 0.05 this is not a signifcant result, meaning that parallel lines suffice. 
+	\item Our interpretation of 2a and 2b would change if we added an interaction term. This is because, with the additive model, when looking at the change in support between 5\% and 15\% sanctions, varying levels of country participation would not affect the difference, as we hold the other variables constant. If we had an interaction term in the model, the difference between 5\% and 15\% sanctions would not be constant and would vary alongside levels of country participation. 
+\end{description}
+	\lstinputlisting[language=R, firstline=91,lastline=104]{PS02 Copy.R}
+\begin{description}
+	\item \noindent  After running the test with the additive and interactive models, we obtain a p-value of 0.39. At a threshold of alpha = 0.05, this is not a significant result, meaning that the parallel lines with the additive model would suffice. 
+	 
 \end{description}
 	\end{enumerate}
 
