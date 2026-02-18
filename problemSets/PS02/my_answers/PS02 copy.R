@@ -54,10 +54,7 @@ stargazer(m1)
 m_null <- glm(choice ~ 1, data = climateSupport, family = binomial) 
 #running a null model
 anova(m_null, m1, test = "LRT") 
-#running an ftest.
-
 # Analysis of Deviance Table
-# 
 # Model 1: choice ~ 1
 # Model 2: choice ~ countries + sanctions
 # Resid. Df Resid. Dev Df Deviance  Pr(>Chi)    
