@@ -102,7 +102,7 @@
 	\item Construct and interpret an unordered multinomial logit with 
 	\texttt{GDPWdiff} as the output and "no change" as the reference category, including the estimated cutoff points and coefficients.
 
-The equation used to estimate the response variable's probability in log-odds form is: 
+The general equation used to estimate the response variable's probability in log-odds form is: 
 \[ \log\left(\frac{P_{i2})}{P_{i2})}\right) = \beta_{k0} + \beta_{k1} x_1 + \cdots + \beta_{kp} x_p \]
 
 Prior to running the model we must first prepare the data by categorizing the GDPWdiff variable as well as facotring it. Following this we must then set "No Change" as the reference category. 
@@ -110,7 +110,7 @@ Prior to running the model we must first prepare the data by categorizing the GD
 
 	\lstinputlisting[language=R, firstline=43,lastline=48]{PS3ZK.R}
 \vspace{0.1cm}
-	\lstinputlisting[language=R, firstline=51,lastline=57]{PS3ZK.R}
+	\lstinputlisting[language=R, firstline=51,lastline=51]{PS3ZK.R}
 \vspace{0.5cm}
 
 \begin{table}[!htbp] \centering 
@@ -141,32 +141,16 @@ Prior to running the model we must first prepare the data by categorizing the GD
 	\end{tabular} 
 \end{table}
 
-\vspace{0.01cm}
-\begin{table}[!htbp] \centering 
-	\caption{} 
-	\label{} 
-	\begin{tabular}{@{\extracolsep{5pt}} ccccc} 
-		\\[-1.8ex]\hline 
-		\hline \\[-1.8ex] 
-		& (Intercept) & REG & OIL & .1 \\ 
-		\hline \\[-1.8ex] 
-		Negative & $44.942$ & $3.972$ & $119.578$ & $26.439$ \\ 
-		Positive & $93.108$ & $5.865$ & $97.156$ & $0.880$ \\ 
-		\hline \\[-1.8ex] 
-	\end{tabular} 
-\end{table} 
-\vspace{0.5cm}
 \begin{description}
 	\item
-	\noindent Reg Negative - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.379 log-odds change when going from no change to a negative change in Difference in GDP.
+\noindent Reg Negative - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.379 log-odds change when going from no change to a negative change in the difference in GDP.
 
-Reg Positive - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.769 log-odds change when going from no change to a positive change in the Difference in GDP.
+Reg Positive - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.769 log-odds change when going from no change to a positive change in the difference in GDP.
 
-Oil Negative - On average, holding all else constant, going to a country with the average ratio of fuel exports to total exports greater than 50\% is associated with an increase of 4.784 in log odds when going from no change to a negative change in the difference in GDP.
+Oil Negative - On average, holding all else constant, going to a country with an average fuel-to-total export ratio greater than 50\% is associated with an increase of 4.784 in log-odds when moving from no change to a negative change in the difference in GDP.
 
 Oil Positive - On average, holding all else constant, going to a country with an average fuel-to-total export ratio greater than 50\% is associated with a 4.576 increase in log-odds when moving from no change to a positive change in the difference in GDP.
 
-\newpage
 \end{description}
 	\item Construct and interpret an ordered multinomial logit with \texttt{GDPWdiff} as the outcome variable, including the estimated cutoff points and coefficients.
 
@@ -186,10 +170,11 @@ Oil Positive - On average, holding all else constant, going to a country with an
 		\hline \\[-1.8ex] 
 	\end{tabular} 
 \end{table} 
-Reg: Holding other variables constant, on average, for democracies, the log  odds of having a positive Difference in GDP increases by about 0.410.
+Reg: Holding other variables constant, on average, for democracies, the log odds of having a positive Difference in GDP increase by about 0.410.
 
-OIL: Holding other variables constant, on average, for countries with the ratio of fuel expoets to total export exceeding 50\%, the log  odds of having a positive Difference in GDP decreases by about 0.179.
+OIL: Holding other variables constant, on average, for countries with the ratio of fuel exports to total exports exceeding 50\%, the log odds of having a positive Difference in GDP decreases by about 0.179.
 
+\newpage
 \begin{table}[!htbp] \centering 
 	\caption{} 
 	\label{} 
@@ -202,7 +187,7 @@ OIL: Holding other variables constant, on average, for countries with the ratio 
 		OIL & $0.836$ & $0.668$ & $1.051$ \\ 
 		\hline \\[-1.8ex] 
 	\end{tabular} 
-\end{table}  
+\end{table}
 We can also interpret the results by caluclating the odds ratio. 
 
 Reg: Holding other variables constant, on average, for democracies, the odds of having a positive Difference in GDP increases by about 50\%.

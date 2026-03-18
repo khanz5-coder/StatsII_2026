@@ -50,10 +50,11 @@ gdp_data$GDPWdiff_cat <- relevel(gdp_data$GDPWdiff_cat, ref = "No Change")
 # run model
 mult.log <- multinom(GDPWdiff_cat ~ REG + OIL, data = gdp_data)
 summary(mult.log)
-exp(coef(mult.log))
+
+od <- exp(coef(mult.log))
 
 stargazer(mult.log)
-
+stargazer(od)
 orci <- exp(cbind(OR = coef(mult.log), confint(mult.log)))
 
 ord.log <- polr(GDPWdiff_cat ~ REG + OIL, data = gdp_data, Hess = TRUE)
