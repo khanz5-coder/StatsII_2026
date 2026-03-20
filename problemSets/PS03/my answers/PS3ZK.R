@@ -27,7 +27,7 @@ pkgTest <- function(pkg){
 # ex: stringr
 # lapply(c("stringr"),  pkgTest)
 
-lapply(c("nnet", "MASS"),  pkgTest)
+lapply(c("nnet", "MASS", "stargazer"),  pkgTest)
 
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
@@ -73,3 +73,23 @@ or <- exp(cbind(OR = coef(ord.log), ci))
 
 # load data
 mexico_elections <- read.csv("https://raw.githubusercontent.com/ASDS-TCD/StatsII_2026/main/datasets/MexicoMuniData.csv")
+
+#Running the Model
+pois_mod <- glm(PAN.visits.06 ~ competitive.district + marginality.06 + PAN.governor.06, 
+                data = mexico_elections, 
+                family = poisson(link = "log"))
+
+summary(pois_mod)
+stargazer(pois_mod)
+
+#Predicted Values
+newdata <- data.frame(
+  competitive.district = 1,
+  marginality.06 = 0,
+  PAN.governor.06 = 1
+)
+predict(pois_mod, newdata, type = "response")
+# 0.01494818
+lb <- exp(-3.810 - 0.081 - 0.312)
+lb
+# [1] 0.01495066

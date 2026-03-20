@@ -143,6 +143,12 @@ Prior to running the model we must first prepare the data by categorizing the GD
 
 \begin{description}
 	\item
+	
+\noindent Intercept Neg: On average, holding all else constant, a non-democracy with a fuel-to-total export ratio under 50\% is associated with a 3.805 increase in the log-odds of experiencing negative GDP growth relative to no change.
+
+\noindent Intercept Neg: On average, holding all else constant, a non-democracy with a fuel-to-total export ratio under 50\% is associated with a 4.534 increase in the log-odds of experiencing positive GDP growth relative to no change.
+
+  
 \noindent Reg Negative - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.379 log-odds change when going from no change to a negative change in the difference in GDP.
 
 Reg Positive - On average, holding all else constant, a change from a non-democracy to a democracy is associated with a 1.769 log-odds change when going from no change to a positive change in the difference in GDP.
@@ -174,6 +180,9 @@ Reg: Holding other variables constant, on average, for democracies, the log odds
 
 OIL: Holding other variables constant, on average, for countries with the ratio of fuel exports to total exports exceeding 50\%, the log odds of having a positive Difference in GDP decreases by about 0.179.
 
+Cutoff Points: When the variable exceeds -5.320, the probability of having either a negative or positive change in GDP  becomes greater than having no change in GDP.
+
+Cutoff Points: When the variable exceeds -0.704, the probability of having a Positive change in GDP  becomes greater than having negative change or no change.
 \newpage
 \begin{table}[!htbp] \centering 
 	\caption{} 
@@ -201,13 +210,60 @@ OIL: Holding other variables constant, on average, for countries with the ratio 
 \begin{enumerate}
 	\item [(a)]
 	Run a Poisson regression because the outcome is a count variable. Is there evidence that PAN presidential candidates visit swing districts more? Provide a test statistic and p-value.
+	\begin{table}[!htbp] \centering 
+		\caption{} 
+		\label{} 
+		\begin{tabular}{@{\extracolsep{5pt}}lc} 
+			\\[-1.8ex]\hline 
+			\hline \\[-1.8ex] 
+			& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+			\cline{2-2} 
+			\\[-1.8ex] & PAN.visits.06 \\ 
+			\hline \\[-1.8ex] 
+			competitive.district & $-$0.081 \\ 
+			& (0.171) \\ 
+			& \\ 
+			marginality.06 & $-$2.080$^{***}$ \\ 
+			& (0.117) \\ 
+			& \\ 
+			PAN.governor.06 & $-$0.312$^{*}$ \\ 
+			& (0.167) \\ 
+			& \\ 
+			Constant & $-$3.810$^{***}$ \\ 
+			& (0.222) \\ 
+			& \\ 
+			\hline \\[-1.8ex] 
+			Observations & 2,407 \\ 
+			Log Likelihood & $-$645.606 \\ 
+			Akaike Inf. Crit. & 1,299.213 \\ 
+			\hline 
+			\hline \\[-1.8ex] 
+			\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+		\end{tabular} 
+	\end{table}
+	
+	(Table attached below)
+We can see that there is no evidence that PAN presidential candidates visit swing districts more. the competitive. The district variable has a z-value of -0.447 and a p-value of 0.633, which, at the alpha = 0.05 threshold, is not statistically significant. 
 
+	
+	
 	\item [(b)]
 	Interpret the \texttt{marginality.06} and \texttt{PAN.governor.06} coefficients.
 	
+	Intercept: For a district which is not competitive, average poverty level, and a non-PAN governor, decreases the amount of visits from the winning PAN presidential candidate in 2006 by a multiplicative factor of 3.810.
+	
+	PAN.governor.06 - On average, holding all else constant, a state having a PAN-affiliated governor decreases the amount of visits from the winning PAN presidential candidate in 2006 by a multiplicative factor of 0.312. 
+
+Marginality - On average, holding all else constant, a one-unit increase in poverty decreases the amount of visits from the winning PAN presidential candidate in 2006 by a multiplicative factor of 0.2.080. 
+
+
+		\lstinputlisting[language=R, firstline=78,lastline=83]{PS3ZK.R}
+	\vspace{0.5cm}
 	\item [(c)]
 	Provide the estimated mean number of visits from the winning PAN presidential candidate for a hypothetical district that was competitive (\texttt{competitive.district}=1), had an average poverty level (\texttt{marginality.06} = 0), and a PAN governor (\texttt{PAN.governor.06}=1).
 	
+	For a competitive district, with an average poverty level and a PAN governor, the estimate mean number of visitng from the winning PAN presidential candidate is about 0. 
+		\lstinputlisting[language=R, firstline=86,lastline=95]{PS3ZK.R}
 \end{enumerate}
 
 \end{document}
