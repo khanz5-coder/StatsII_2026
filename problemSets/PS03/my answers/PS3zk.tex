@@ -210,6 +210,11 @@ OIL: Holding other variables constant, on average, for countries with the ratio 
 \begin{enumerate}
 	\item [(a)]
 	Run a Poisson regression because the outcome is a count variable. Is there evidence that PAN presidential candidates visit swing districts more? Provide a test statistic and p-value.
+	
+	\[
+	\lambda_i = e^{\beta_0 + \beta_1 x_{i1} + \cdots + \beta_k x_{ki}}
+	\]
+	
 	\begin{table}[!htbp] \centering 
 		\caption{} 
 		\label{} 
@@ -263,6 +268,13 @@ Marginality - On average, holding all else constant, a one-unit increase in pove
 	Provide the estimated mean number of visits from the winning PAN presidential candidate for a hypothetical district that was competitive (\texttt{competitive.district}=1), had an average poverty level (\texttt{marginality.06} = 0), and a PAN governor (\texttt{PAN.governor.06}=1).
 	
 	For a competitive district, with an average poverty level and a PAN governor, the estimate mean number of visitng from the winning PAN presidential candidate is about 0. 
+I tried two different approaches to estimating fitted values and found that I had the same answer for both. The equation to obtain the fitted values is:
+
+\[
+\lambda_i = e^{-3.810 - 0.081 - 0.321}
+\]
+
+
 		\lstinputlisting[language=R, firstline=86,lastline=95]{PS3ZK.R}
 \end{enumerate}
 
