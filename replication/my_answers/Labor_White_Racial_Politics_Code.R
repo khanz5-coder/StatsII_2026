@@ -1,5 +1,5 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
-file.rename( "/Users/zahrita/Documents/Github/StatsII_2026/Replication Project 2026/Labor_White_Racial_Politics_Code.R", "~/Documents/GitHub/StatsII_2026/replication/my_answers/Labor_White_Racial_Politics_Code.R")
+file.rename("/Users/zahrita/Downloads/Downloads/Replication Project/Tex/Labor_White_Racial_Politics_Code.R", "/Users/zahrita/Documents/Github/Replication Project 2026/Labor_White_Racial_Politics_Code.R")
 
 sink(file = "log.txt", append = FALSE, type = c("output", "message"),
      split = FALSE)
