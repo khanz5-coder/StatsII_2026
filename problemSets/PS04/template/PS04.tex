@@ -3,6 +3,7 @@
 \usepackage{natbib}
 \usepackage{setspace}
 \usepackage{fullpage}
+\usepackage{float}
 \usepackage{color}
 \usepackage[reqno]{amsmath}
 \usepackage{amsthm}
@@ -62,7 +63,7 @@
 
 \title{Problem Set 4}
 \date{Due: April 10, 2026}
-\author{Applied Stats II}
+\author{Zahra Khan}
 
 
 \begin{document}
@@ -79,7 +80,41 @@
 \section*{Question 1}
 \vspace{.25cm}
 \noindent We're interested in modeling the historical causes of child mortality. We have data from 26855 children born in Skellefteå, Sweden from 1850 to 1884. Using the "child" dataset in the \texttt{eha} library, fit a Cox Proportional Hazard model using mother's age and infant's gender as covariates. Present and interpret the output.
-
+\begin{table}[H] \centering 
+	\caption{} 
+	\label{} 
+	\begin{tabular}{@{\extracolsep{5pt}}lc} 
+		\\[-1.8ex]\hline 
+		\hline \\[-1.8ex] 
+		& \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+		\cline{2-2} 
+		\\[-1.8ex] & child\_surv \\ 
+		\hline \\[-1.8ex] 
+		sexfemale & $-$0.084$^{***}$ \\ 
+		& (0.027) \\ 
+		& \\ 
+		socBranchfarming & $-$0.007 \\ 
+		& (0.092) \\ 
+		& \\ 
+		socBranchbusiness & 0.335$^{**}$ \\ 
+		& (0.141) \\ 
+		& \\ 
+		socBranchworker & 0.110 \\ 
+		& (0.094) \\ 
+		& \\ 
+		\hline \\[-1.8ex] 
+		Observations & 26,574 \\ 
+		R$^{2}$ & 0.001 \\ 
+		Max. Possible R$^{2}$ & 0.986 \\ 
+		Log Likelihood & $-$56,498.610 \\ 
+		Wald Test & 33.180$^{***}$ (df = 4) \\ 
+		LR Test & 32.267$^{***}$ (df = 4) \\ 
+		Score (Logrank) Test & 33.279$^{***}$ (df = 4) \\ 
+		\hline 
+		\hline \\[-1.8ex] 
+		\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+	\end{tabular} 
+\end{table}
 \section*{Question 2}
 \vspace{.25cm}
 \noindent We want to estimate how the amount of damage caused by a disaster relates to (1) whether disaster relief is provided and (2) the amount of relief that is provided  conditional on a donation occurring when a disaster hits a given country. Estimate a Heckman selection model using the \texttt{disasters\_response} data on \href{https://raw.githubusercontent.com/ASDS-TCD/StatsII_2026/refs/heads/main/datasets/disaster_response.csv}{GitHub} in which \texttt{binContribution} is the outcome for the selection equation, and \texttt{originalContributionMillionUSDLogged} is the outcome for the second equation. Use \texttt{occurrences  + deathsEM + normalizedDamageEMLogged} as your input variables for both equations. Present and interpret the output.

@@ -27,7 +27,8 @@ pkgTest <- function(pkg){
 # ex: stringr
 # lapply(c("stringr"),  pkgTest)
 
-lapply(c("nnet", "MASS"),  pkgTest)
+lapply(c("nnet", "MASS", "survival", "eha", "tidyverse", "ggfortify", "stargazer"),  pkgTest)
+
 
 # set wd for current folder
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
@@ -39,6 +40,14 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 # load data on child mortality by mother's background and child gender
 data("child")
 
+child_surv <- with(child, Surv(enter, exit, event))
+
+
+cox <- coxph(child_surv ~ sex + m.age, data = child)
+summary(cox)
+
+# drop1(cox, test = "Chisq")
+stargazer(cox, type = "latex")
 #####################
 # Problem 2
 #####################
