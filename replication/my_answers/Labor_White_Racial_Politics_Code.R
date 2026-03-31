@@ -145,7 +145,7 @@ out <- interflex(
   Ylabel = "Racial Resenment",
   Dlabel = "Union Membership",
   Xlabel = "Age"
-)
+) 
 plot(out)
 plotdata <- rbind(tidy(lm_bv)[2,], tidy(lm_controls)[2,], tidy(lm_controls_fe)[2,])
 
